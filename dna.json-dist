@@ -1,0 +1,10 @@
+{
+    "packagist": {
+        "secret": "super-secret",
+        "remember_me": "even-moar-secret"
+    },
+    "github": {
+        "client_id": "oauth client id",
+        "secret": "oauth secret"
+    }
+}

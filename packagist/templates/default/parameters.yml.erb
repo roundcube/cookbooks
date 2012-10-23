@@ -1,0 +1,32 @@
+parameters:
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
+    database_name: <%=@db["db_name"]%>
+    database_user: root
+    database_password:
+
+    mailer_transport:
+    mailer_host: 127.0.0.1
+    mailer_user:
+    mailer_password:
+    mailer_from_email: admin@example.org
+    mailer_from_name: Admin Team
+
+    packagist_host: <%=@server_name%>
+    # router.request_context.host: %packagist_host%
+    # router.request_context.scheme: https
+
+    redis_dsn: redis://127.0.0.1/1
+
+    locale: en
+
+    secret: <%=@secret%>
+    remember_me.secret: <%=@remember_me%>
+
+    google_analytics:
+        ga_key:
+
+    github.client_id: <%=@github_client%>
+    github.client_secret: <%=@github_secret%>
+
+    force_ssl: false

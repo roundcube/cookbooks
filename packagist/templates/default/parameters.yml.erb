@@ -6,11 +6,11 @@ parameters:
     database_password:
 
     mailer_transport:
-    mailer_host: 127.0.0.1
-    mailer_user:
-    mailer_password:
-    mailer_from_email: admin@example.org
-    mailer_from_name: Admin Team
+    mailer_host: <%=@smtp["hostname"]%>
+    mailer_user: <%=@smtp["username"]%>
+    mailer_password: <%=@smtp["password"]%>
+    mailer_from_email: <%=@email%>
+    mailer_from_name: <%=@server_name%>
 
     packagist_host: <%=@server_name%>
     # router.request_context.host: %packagist_host%

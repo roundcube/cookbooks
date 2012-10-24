@@ -39,7 +39,7 @@ end
 execute "remove default" do
   command "rm /etc/nginx/sites-enabled/default"
   only_if do
-    File.exists("/etc/nginx/sites-enabled/default")
+    File.exists?("/etc/nginx/sites-enabled/default")
   end
 end
 

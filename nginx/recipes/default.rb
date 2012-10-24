@@ -36,6 +36,13 @@ when 'package'
   include_recipe 'nginx::commons'
 end
 
+execute "remove default" do
+  command "rm /etc/nginx/sites-enabled/default"
+  only_if do
+    File.exists("/etc/nginx/sites-enabled/default")
+  end
+end
+
 service 'nginx' do
   supports :status => true, :restart => true, :reload => true
   action :start

@@ -41,6 +41,7 @@ http {
   gzip_disable     "MSIE [1-6]\.";
   <% end %>
 
+  types_hash_max_size 8192;
   server_names_hash_bucket_size <%= node['nginx']['server_names_hash_bucket_size'] %>;
 
   include <%= node['nginx']['dir'] %>/conf.d/*.conf;

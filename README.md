@@ -13,12 +13,13 @@ The server should run Ubuntu Precise. Before starting, please ensure the latest 
  * `apt-get update`
  * `apt-get upgrade`
  * `apt-get dist-upgrade`
- * `apt-get install ruby1.9.3`
+ * `apt-get install ruby1.9.3 make git`
 
 ### Ruby setup
 
  * create `~/.gemrc`
  * paste this into it: `gem: --no-ri --no-rdoc`
+ * `gem install chef`
 
 ## Installation
 

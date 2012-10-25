@@ -13,3 +13,7 @@ default["packagist"]["smtp"] = {
 
 default["packagist"]["db"]            = {}
 default["packagist"]["db"]["db_name"] = "packagist"
+
+# deploying live
+default["packagist"]["live_root"]  = "/var/www"
+default["packagist"]["repository"] = "git://github.com/roundcube/plugins.roundcube.net.git"

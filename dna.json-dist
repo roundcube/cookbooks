@@ -1,5 +1,6 @@
 {
     "packagist": {
+        "ga": "",
         "secret": "super-secret",
         "remember_me": "even-moar-secret"
     },

@@ -6,6 +6,7 @@ template "#{node["packagist"]["root"]}/app/config/parameters.yml" do
     :db            => node["packagist"]["db"],
     :email         => node["packagist"]["email"],
     :server_name   => node["packagist"]["server_name"],
+    :ga_key        => node["packagist"]["ga"],
     :github_client => node["github"]["client_id"],
     :github_secret => node["github"]["secret"],
     :secret        => node["packagist"]["secret"],

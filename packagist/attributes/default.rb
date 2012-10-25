@@ -5,6 +5,8 @@ default["packagist"]["socket"]      = "/var/run/php5-fpm.sock"
 default["packagist"]["nginx"]       = "/etc/nginx"
 default["packagist"]["email"]       = "plugins@roundcube.net"
 
+default["packagist"]["ga"] = ""
+
 default["packagist"]["smtp"] = {
     "hostname" => "127.0.0.1",
     "username" => "",

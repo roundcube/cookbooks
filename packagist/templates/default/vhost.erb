@@ -4,17 +4,17 @@ server {
     root <%=@root%>/web/;
 
     location / {
-        index app_dev.php;
+        index <%=@router%>;
         if (-f $request_filename) {
             break;
         }
-        rewrite ^(.*)$ /app_dev.php last;
+        rewrite ^(.*)$ /<%=@router;%> last;
     }
 
     # Pass PHP scripts to PHP-FPM
     location ~* \.php$ {
-        try_files       $uri /app_dev.php;
-        fastcgi_index   app_dev.php;
+        try_files       $uri /<%=@router%>;
+        fastcgi_index   <%=@router%>;
         fastcgi_pass    unix:<%=@socket%>;
         include         fastcgi_params;
         fastcgi_param   PATH_INFO          $fastcgi_path_info;

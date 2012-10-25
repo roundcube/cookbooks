@@ -49,7 +49,7 @@ deploy node["packagist"]["root"] do
     end
 
     execute "composer install" do
-      command "./composer.phar install"
+      command "./composer.phar install --prefer-dist -n"
       cwd     release_path
     end
 

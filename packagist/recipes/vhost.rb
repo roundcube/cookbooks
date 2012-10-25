@@ -2,8 +2,10 @@ conf = node["packagist"]["nginx"]
 
 if node.attribute?("live") and node["live"] == true
   docroot = "#{node["packagist"]["live_root"]}/#{node["packagist"]["server_name"]}/current"
+  router  = "app.php"
 else 
   docroot = node["packagist"]["root"]
+  router  = "app_dev.php"
 end
 
 template "#{conf}/sites-available/#{node["packagist"]["server_name"]}" do
@@ -14,6 +16,7 @@ template "#{conf}/sites-available/#{node["packagist"]["server_name"]}" do
   variables({
     :listen      => 80,
     :root        => docroot,
+    :router      => router,
     :server_name => node["packagist"]["server_name"],
     :socket      => node["packagist"]["socket"]
   })

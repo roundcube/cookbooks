@@ -3,7 +3,10 @@
         "secret": "super-secret",
         "remember_me": "even-moar-secret"
     },
-    "live": true,
+    "nginx": {
+        "default_site_enabled": false
+    },
+    "live": false,
     "github": {
         "client_id": "oauth client id",
         "secret": "oauth secret"

@@ -17,10 +17,10 @@ The server should run Ubuntu Precise. Before starting, please ensure the latest 
 
 ### Ruby setup
 
- * create `~/.gemrc`
- * paste this into it: `gem: --no-ri --no-rdoc`
+ * setup `~/.gemrc`: `echo "gem: --no-ri --no-rdoc" > ~/.gemrc`
  * `gem install chef`
 
 ## Installation
 
- * TBD
+ * set `live: true` in dna.json
+ * `chef-solo -c /home/till/cookbooks/chef-solo/solo.rb`

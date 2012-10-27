@@ -1,5 +1,14 @@
 include_recipe "packagist::vhost"
 
+# lolbuntu - remove this
+packages = ["whoopsie", "landscape-common"]
+packages.each do |p|
+  package p do
+    action :remove
+  end
+end
+
+package "htop"
 package "curl"
 package "git-core"
 

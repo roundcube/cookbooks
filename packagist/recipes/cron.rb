@@ -11,7 +11,7 @@ commands.each do |command|
   cron command do
     mailto  node["packagist"]["email"]
     user    "www-data"
-    minute  "*/2"
-    command "#{app_root}/app/console #{command}"
+    minute  "*/10"
+    command "cd #{app_root} && app/console #{command}"
   end
 end

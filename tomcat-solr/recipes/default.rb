@@ -71,6 +71,14 @@ when "debian", "ubuntu"
         mode "0644"
     end
 
+    template "/etc/tomcat7/server.xml" do
+      source "server.xml"
+      owner "root"
+      group tomcat_group
+      mode "0644"
+      notifies :restart, resources(:service => "tomcat7")
+    end
+
     #cookbook_file "/var/lib/tomcat7/webapps/solr.war" do
     #    source "solr.war"
     #    owner "root"

@@ -18,6 +18,9 @@
 #
 case node[:platform]
 when "debian", "ubuntu"
+
+    tomcat_group = "tomcat7"
+
     package "tomcat7" do
         action :install
     end
@@ -26,14 +29,14 @@ when "debian", "ubuntu"
     template "/var/lib/tomcat7/conf/Catalina/localhost/solr.xml" do
         source "tomcat_solr.xml.erb"
         owner "root"
-        group "tomcat"
+        group tomcat_group
         mode "0664"
     end
 
     # creating solr home and solr core
     directory "#{node[:solr][:home]}/#{node[:solr][:core_name]}" do
         owner "root"
-        group "tomcat"
+        group tomcat_group
         mode "0777"
         action :create
         recursive true
@@ -41,7 +44,7 @@ when "debian", "ubuntu"
 
     directory "#{node[:solr][:home]}/#{node[:solr][:core_name]}/conf" do
         owner "root"
-        group "tomcat"
+        group tomcat_group
         mode "0777"
         action :create
     end

@@ -11,6 +11,12 @@ server {
         rewrite ^(.*)$ /<%=@router;%> last;
     }
 
+    location /solr/ {
+        auth_basic "solr";
+        auth_basic_user_file /etc/nginx/htpasswd;
+        proxy_pass http://127.0.0.1:8080/solr/;
+    }
+
     # Pass PHP scripts to PHP-FPM
     location ~* \.php$ {
         try_files       $uri /<%=@router%>;

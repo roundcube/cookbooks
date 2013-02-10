@@ -11,6 +11,7 @@ template "#{node["packagist"]["root"]}/app/config/parameters.yml" do
     :github_secret => node["github"]["secret"],
     :secret        => node["packagist"]["secret"],
     :remember_me   => node["packagist"]["remember_me"],
-    :smtp          => node["packagist"]["smtp"]
+    :smtp          => node["packagist"]["smtp"],
+    :solr          => node["packagist"]["solr"]
   })
 end

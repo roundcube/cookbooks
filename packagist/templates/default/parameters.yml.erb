@@ -30,3 +30,9 @@ parameters:
     github.client_secret: <%=@github_secret%>
 
     force_ssl: false
+
+    nelmio_solarium:
+        clients:
+            default:
+                dsn: <%=@solr["dsn"]%>
+                timeout: <%=@solr["timeout"]%>

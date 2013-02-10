@@ -12,6 +12,7 @@ template "#{node["packagist"]["root"]}/app/config/parameters.yml" do
     :secret        => node["packagist"]["secret"],
     :remember_me   => node["packagist"]["remember_me"],
     :smtp          => node["packagist"]["smtp"],
-    :solr          => node["packagist"]["solr"]
+    :solr_dsn      => node["packagist"]["solr"]["dsn"],
+    :solr_timeout  => node["packagist"]["solr"]["timeout"]
   })
 end

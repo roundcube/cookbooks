@@ -1,3 +1,5 @@
+include_recipe "tomcat7::service"
+
 files = ["protwords.txt", "schema.xml", "solrconfig.xml", "stopwords.txt", "synonyms.txt"]
 conf  = "/opt/solr/core1/conf"
 
@@ -15,4 +17,8 @@ cookbook_file "#{conf}/lang/stopwords_en.txt" do
   owner "root"
   group "root"
   mode "0644"
+end
+
+service "tomcat7" do
+  action :restart
 end

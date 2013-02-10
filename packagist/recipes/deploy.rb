@@ -20,7 +20,7 @@ deploy node["packagist"]["root"] do
   enable_submodules false
   migrate           false
   user              "www-data"
-  revision          "topics/layout"
+  revision          "master"
 
   symlinks                   Hash.new
   symlink_before_migrate     Hash.new

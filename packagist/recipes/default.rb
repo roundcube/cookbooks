@@ -29,6 +29,7 @@ else
   include_recipe "packagist::configure"
   include_recipe "packagist::composer"
   include_recipe "packagist::db"
+  include_recipe "packagist::solr"
 end
 
 include_recipe "packagist::cron"

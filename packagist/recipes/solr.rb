@@ -1,4 +1,4 @@
-include_recipe "tomcat-solr::service"
+include_recipe "tomcat-solr::default"
 
 files = ["protwords.txt", "schema.xml", "solrconfig.xml", "stopwords.txt", "synonyms.txt"]
 conf  = "/opt/solr/core1/conf"

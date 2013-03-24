@@ -81,11 +81,17 @@ when "debian", "ubuntu"
       notifies :restart, resources(:service => "tomcat7")
     end
 
-    #cookbook_file "/var/lib/tomcat7/webapps/solr.war" do
-    #    source "solr.war"
-    #    owner "root"
-    #    group "root"
-    #    mode "0644"
-    #    #      notifies :restart, resources(:service => "tomcat7") 
-    #end
+    # download a binary release...
+    remote_file "/tmp/apache-solr-4.0.0.tgz" do
+      source "http://archive.apache.org/dist/lucene/solr/4.0.0/apache-solr-4.0.0.tgz"
+      action :create_if_missing
+    end
+
+    # ...and extract solr.war for tomcat
+    execute "extract" do
+      command "tar xf apache-solr-4.0.0.tgz && cp apache-solr-4.0.0/example/webapps/solr.war /var/lib/tomcat7/webapps/solr.war"
+      creates "/var/lib/tomcat7/webapps/solr.war"
+      not_if { ::File.exists?("/var/lib/tomcat7/webapps/solr.war") }
+      cwd "/tmp"
+    end
 end

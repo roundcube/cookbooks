@@ -51,7 +51,7 @@ deploy node["packagist"]["root"] do
     end
 
     execute "composer install" do
-      command "./composer.phar install --prefer-source -n"
+      command "./composer.phar install"
       cwd     release_path
     end
 

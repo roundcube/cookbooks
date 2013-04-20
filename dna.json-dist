@@ -11,5 +11,10 @@
     "github": {
         "client_id": "oauth client id",
         "secret": "oauth secret"
+    },
+    "smtp": {
+        "hostname" => "smtp.gmail.com",
+        "username" => "",
+        "password" => ""
     }
 }

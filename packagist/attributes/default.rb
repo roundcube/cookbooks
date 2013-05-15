@@ -8,9 +8,11 @@ default["packagist"]["email"]       = "plugins@roundcube.net"
 default["packagist"]["ga"] = ""
 
 default["packagist"]["smtp"] = {
-    "hostname" => "127.0.0.1",
+    "hostname" => "smtp.gmail.com",
     "username" => "",
-    "password" => ""
+    "password" => "",
+    "encryption" => "ssl",
+    "authmode" => "login",
 }
 
 default["packagist"]["db"]            = {}

@@ -5,10 +5,12 @@ parameters:
     database_user: root
     database_password:
 
-    mailer_transport:
+    mailer_transport: smtp
     mailer_host: <%=@smtp["hostname"]%>
     mailer_user: <%=@smtp["username"]%>
     mailer_password: <%=@smtp["password"]%>
+    mailer_encryption: <%=@smtp["encryption"]%>
+    mailer_auth_mode: <%=@smtp["authmode"]%>
     mailer_from_email: <%=@email%>
     mailer_from_name: <%=@server_name%>
 

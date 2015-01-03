@@ -14,6 +14,14 @@ Vagrant::Config.run do |config|
 
   config.vm.share_folder "v-data", "/vagrant_data", "../packagist", :nfs => true
 
+  # config.omnibus.chef_version = "11.6.0"
+
+  # install an old version of chef to work with our recipes
+  config.vm.provision :shell, inline: 'apt-get update'
+  config.vm.provision :shell, inline: 'apt-get install build-essential ruby1.9.3 --yes'
+  config.vm.provision :shell, inline: 'gem install ohai --version 6.14.0 --no-rdoc --no-ri'
+  config.vm.provision :shell, inline: 'gem install chef --version 10.34.6 --no-rdoc --no-ri'
+
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "./"
     #chef.roles_path = "../my-recipes/roles"

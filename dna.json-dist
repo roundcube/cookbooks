@@ -13,8 +13,8 @@
         "secret": "oauth secret"
     },
     "smtp": {
-        "hostname" => "smtp.gmail.com",
-        "username" => "",
-        "password" => ""
+        "hostname": "smtp.gmail.com",
+        "username": "",
+        "password": ""
     }
 }
